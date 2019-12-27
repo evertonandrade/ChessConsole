@@ -1,5 +1,6 @@
 ﻿using System;
 using ChessConsole.Board;
+using ChessConsole.Game;
 
 namespace ChessConsole
 {
@@ -7,8 +8,11 @@ namespace ChessConsole
     {
         static void Main(string[] args)
         {
-            Chessboard b = new Chessboard(8,8);
-            Screen.ShowBoard(b);
+            Chessboard tab = new Chessboard(8,8);
+            tab.InsertPiece(new King(tab, Color.Black), new Position(0, 0));
+            tab.InsertPiece(new Rook(tab, Color.Black), new Position(0, 3));
+            tab.InsertPiece(new King(tab, Color.Black), new Position(4, 5));
+            Screen.ShowBoard(tab);
         }
     }
 }

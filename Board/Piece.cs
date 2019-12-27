@@ -11,9 +11,9 @@ namespace ChessConsole.Board
         {
         }
 
-        public Piece(Position position, Color color, Chessboard chessboard)
+        public Piece(Chessboard chessboard, Color color)
         {
-            Position = position;
+            Position = null;
             Color = color;
             Chessboard = chessboard;
             AmountMoves = 0;

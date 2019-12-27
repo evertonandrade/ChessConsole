@@ -11,6 +11,10 @@
         <e p="Position.cs" t="Include" />
       </e>
       <e p="ChessConsole.csproj" t="IncludeRecursive" />
+      <e p="Game" t="Include">
+        <e p="King.cs" t="Include" />
+        <e p="Rook.cs" t="Include" />
+      </e>
       <e p="Program.cs" t="Include" />
       <e p="Screen.cs" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
