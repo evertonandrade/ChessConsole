@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e4578b8-bcb0-47e3-af50-895fed73869b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Board/Exceptions/BoardException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game/ChessPosition.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board/Chessboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Board/Chessboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.pdb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +23,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Game/Rook.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Game/ChessPosition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Board/Position.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Board/Chessboard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
@@ -37,9 +43,10 @@
         <option value="$PROJECT_DIR$/Board/Piece.cs" />
         <option value="$PROJECT_DIR$/Game/King.cs" />
         <option value="$PROJECT_DIR$/Game/Rooks.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/Board/Exceptions/BoardException.cs" />
         <option value="$PROJECT_DIR$/Board/Chessboard.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Game/ChessPosition.cs" />
       </list>
     </option>
   </component>
@@ -91,7 +98,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577413486366</updated>
-      <workItem from="1577413489656" duration="6760000" />
+      <workItem from="1577413489656" duration="7043000" />
+      <workItem from="1577483231695" duration="484000" />
     </task>
     <servers />
   </component>
@@ -103,7 +111,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

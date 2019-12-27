@@ -15,6 +15,7 @@
       </e>
       <e p="ChessConsole.csproj" t="IncludeRecursive" />
       <e p="Game" t="Include">
+        <e p="ChessPosition.cs" t="Include" />
         <e p="King.cs" t="Include" />
         <e p="Rook.cs" t="Include" />
       </e>
