@@ -1,3 +1,5 @@
+using ChessConsole.Board.Exceptions;
+
 namespace ChessConsole.Board
 {
     public class Chessboard
@@ -18,10 +20,43 @@ namespace ChessConsole.Board
             return _pieces[line, column];
         }
 
+        public Piece Piece(Position position)
+        {
+            return _pieces[position.Line, position.Column];
+        }
+
+        public bool ThereIsPiece(Position position)
+        {
+            ValidatePosition(position);
+            return Piece(position) != null;
+        }
+
         public void InsertPiece(Piece piece, Position position)
         {
+            if (ThereIsPiece(position))
+            {
+                throw new BoardException("Já existe uma peça nessa posição!");
+            }
             _pieces[position.Line, position.Column] = piece;
             piece.Position = position;
+        }
+
+        public bool ValidPosition(Position position)
+        {
+            if (position.Line < 0 || position.Line >= Lines || position.Column < 0 || position.Column >= Columns)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public void ValidatePosition(Position position)
+        {
+            if (!ValidPosition(position))
+            {
+                throw new BoardException("Posição Inválida!");
+            }
         }
     }
 }
