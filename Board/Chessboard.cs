@@ -12,5 +12,10 @@ namespace ChessConsole.Board
             Columns = columns;
             _pieces = new Piece[Lines,Columns];
         }
+
+        public Piece Piece(int line, int column)
+        {
+            return _pieces[line, column];
+        }
     }
 }

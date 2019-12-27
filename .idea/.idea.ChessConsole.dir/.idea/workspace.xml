@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e4578b8-bcb0-47e3-af50-895fed73869b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Board/Chessboard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Board/Color.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Board/Piece.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screen.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board/Chessboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Board/Chessboard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.pdb" afterDir="false" />
@@ -28,6 +27,7 @@
     <setting file="file://$PROJECT_DIR$/Board/Chessboard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Board/Piece.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Screen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Board/Color.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -36,9 +36,10 @@
         <option value="$PROJECT_DIR$/Board/Position.cs" />
         <option value="$PROJECT_DIR$/Board/Color.cs" />
         <option value="$PROJECT_DIR$/Board/Board.cs" />
-        <option value="$PROJECT_DIR$/Board/Chessboard.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/Board/Piece.cs" />
+        <option value="$PROJECT_DIR$/Board/Chessboard.cs" />
+        <option value="$PROJECT_DIR$/Screen.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
       </list>
     </option>
   </component>
@@ -90,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577413486366</updated>
-      <workItem from="1577413489656" duration="1897000" />
+      <workItem from="1577413489656" duration="3014000" />
     </task>
     <servers />
   </component>

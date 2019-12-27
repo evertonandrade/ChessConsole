@@ -12,6 +12,7 @@
       </e>
       <e p="ChessConsole.csproj" t="IncludeRecursive" />
       <e p="Program.cs" t="Include" />
+      <e p="Screen.cs" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
