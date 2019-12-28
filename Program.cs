@@ -8,11 +8,28 @@ namespace ChessConsole
     {
         static void Main(string[] args)
         {
-            Chessboard tab = new Chessboard(8,8);
-            tab.InsertPiece(new King(tab, Color.Black), new Position(0, 0));
-            tab.InsertPiece(new Rook(tab, Color.White), new Position(0, 3));
-            tab.InsertPiece(new Rook(tab, Color.Black), new Position(0, 6));
-            Screen.ShowBoard(tab);
+            try
+            {
+                ChessMatch match = new ChessMatch();
+                while (!match.Finished)
+                {
+                    Console.Clear();
+                    Screen.ShowBoard(match.Chessboard);
+
+                    Console.WriteLine();
+                    Console.Write("Origem: ");
+                    Position source = Screen.ReadChessPosition().ToPosition();
+                    Console.Write("Destino: ");
+                    Position target  = Screen.ReadChessPosition().ToPosition();
+                    
+                    match.MakeMovement(source, target);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }
