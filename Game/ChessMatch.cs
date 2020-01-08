@@ -28,7 +28,15 @@ namespace ChessConsole.Game
 
         public void InsertPiecesInMatch()
         {
-            Chessboard.InsertPiece(new Rook(Chessboard, Color.Black), new ChessPosition('c', 1).ToPosition());
+            Chessboard.InsertPiece(new Rook(Chessboard, Color.Black), new ChessPosition('a', 8).ToPosition());
+            Chessboard.InsertPiece(new Rook(Chessboard, Color.White), new ChessPosition('a', 1).ToPosition());
+            Chessboard.InsertPiece(new Rook(Chessboard, Color.White), new ChessPosition('h', 1).ToPosition());
+            Chessboard.InsertPiece(new Rook(Chessboard, Color.Black), new ChessPosition('h', 8).ToPosition());
+            Chessboard.InsertPiece(new King(Chessboard, Color.White), new ChessPosition('e', 1).ToPosition());
+            Chessboard.InsertPiece(new King(Chessboard, Color.Black), new ChessPosition('e', 8).ToPosition());
+            
+
+
         }
     }
 }
