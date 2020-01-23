@@ -1,5 +1,6 @@
 ﻿using System;
 using ChessConsole.Board;
+using ChessConsole.Board.Exceptions;
 using ChessConsole.Game;
 
 namespace ChessConsole
@@ -13,22 +14,36 @@ namespace ChessConsole
                 ChessMatch match = new ChessMatch();
                 while (!match.Finished)
                 {
-                    Console.Clear();
-                    Screen.ShowBoard(match.Chessboard);
+                    try
+                    {
+                        Console.Clear();
+                        Screen.ShowBoard(match.Chessboard);
+                        Console.WriteLine();
+                        Console.WriteLine("Turno: " + match.Turn);
+                        Console.WriteLine("Aguardando jogada da " + match.CurrentPlayer);
 
-                    Console.WriteLine();
-                    Console.Write("Origem: ");
-                    Position source = Screen.ReadChessPosition().ToPosition();
+                        Console.WriteLine();
+                        Console.Write("Origem: ");
+                        Position source = Screen.ReadChessPosition().ToPosition();
+                        match.ValidateOriginPosition(source);
 
-                    bool[,] possiblePositions = match.Chessboard.Piece(source).PossibleMoves();
+                        bool[,] possiblePositions = match.Chessboard.Piece(source).PossibleMoves();
                     
-                    Console.Clear();
-                    Screen.ShowBoard(match.Chessboard, possiblePositions);
-                    Console.WriteLine();
-                    Console.Write("Destino: ");
-                    Position target  = Screen.ReadChessPosition().ToPosition();
+                        Console.Clear();
+                        Screen.ShowBoard(match.Chessboard, possiblePositions);
+                        Console.WriteLine();
+                        Console.Write("Destino: ");
+                        Position target  = Screen.ReadChessPosition().ToPosition();
+                        match.ValidateDestinationPosition(source, target);
                     
-                    match.MakeMovement(source, target);
+                        match.PerformPlay(source, target);
+                    }
+                    catch (BoardException e)
+                    {
+                        Console.WriteLine(e.Message);
+                        Console.ReadLine();
+                    }
+
                 }
             }
             catch (Exception e)

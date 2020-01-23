@@ -23,7 +23,7 @@ namespace ChessConsole
         
         public static void ShowBoard(Chessboard chessboard, bool[,] possiblePositions)
         {
-            ConsoleColor OriginalBackground = Console.BackgroundColor;
+            ConsoleColor originalBackground = Console.BackgroundColor;
             ConsoleColor ChangedBackground = ConsoleColor.DarkGray;
             
             for (int i = 0; i < chessboard.Lines; i++)
@@ -37,15 +37,15 @@ namespace ChessConsole
                     }
                     else
                     {
-                        Console.BackgroundColor = OriginalBackground;
+                        Console.BackgroundColor = originalBackground;
                     }
                     ShowPiece(chessboard.Piece(i, j));
-                    Console.BackgroundColor = OriginalBackground;
+                    Console.BackgroundColor = originalBackground;
                 }
                 Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h");
-            Console.BackgroundColor = OriginalBackground;
+            Console.BackgroundColor = originalBackground;
         }
 
         public static ChessPosition ReadChessPosition()

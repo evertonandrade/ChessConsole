@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/home/evertonfa7/RiderProjects/ChessConsole/ChessConsole.csproj",
+    "projectUniqueName": "/home/evertonfa7/Área de Trabalho/ChessConsole/ChessConsole.csproj",
     "projectName": "ChessConsole",
-    "projectPath": "/home/evertonfa7/RiderProjects/ChessConsole/ChessConsole.csproj",
-    "outputPath": "/home/evertonfa7/RiderProjects/ChessConsole/obj/",
+    "projectPath": "/home/evertonfa7/Área de Trabalho/ChessConsole/ChessConsole.csproj",
+    "outputPath": "/home/evertonfa7/Área de Trabalho/ChessConsole/obj/",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "/usr/share/dotnet/sdk/NuGetFallbackFolder"
