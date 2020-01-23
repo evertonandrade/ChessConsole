@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Diagnostics;
 using ChessConsole.Board;
 using ChessConsole.Board.Exceptions;
@@ -10,14 +11,18 @@ namespace ChessConsole.Game
         public int Turn { get; private set; }
         public Color CurrentPlayer { get; private set; }
         public bool Finished { get; private set; }
+        private HashSet<Piece> _pieces;
+        private HashSet<Piece> _capturedPieces;
         
         public ChessMatch()
         {
             Chessboard = new Chessboard(8,8);
             Turn = 1;
             CurrentPlayer = Color.White;
-            InsertPiecesInMatch();
             Finished = false;
+            _pieces = new HashSet<Piece>();
+            _capturedPieces = new HashSet<Piece>();
+            InsertPiecesInMatch();
         }
 
         public void MakeMovement(Position source, Position target)
@@ -26,6 +31,10 @@ namespace ChessConsole.Game
             piece.IncrementAmountMoves();
             Piece CapturedPiece = Chessboard.RemovePiece(target);
             Chessboard.InsertPiece(piece, target);
+            if (CapturedPiece != null)
+            {
+                _capturedPieces.Add(CapturedPiece);
+            }
         }
 
         public void PerformPlay(Position source, Position target)
@@ -73,17 +82,48 @@ namespace ChessConsole.Game
             }
         }
 
+        public HashSet<Piece> PiecesCaptured(Color color)
+        {
+            HashSet<Piece> aux = new HashSet<Piece>();
+            foreach (Piece xPiece in _capturedPieces)
+            {
+                if (xPiece.Color == color)
+                {
+                    aux.Add(xPiece);
+                }
+            }
+
+            return aux;
+        }
+
+        public HashSet<Piece> PiecesInTheGame(Color color)
+        {
+            HashSet<Piece> aux = new HashSet<Piece>();
+            foreach (Piece xPiece in _pieces)
+            {
+                if (xPiece.Color == color)
+                {
+                    aux.Add(xPiece);
+                }
+            }
+            aux.ExceptWith(PiecesCaptured(color));
+            return aux;
+        }
+
+        public void InsertNewPiece(char column, int line, Piece piece)
+        {
+            Chessboard.InsertPiece(piece, new ChessPosition(column, line).ToPosition());
+            _pieces.Add(piece);
+        }
+
         public void InsertPiecesInMatch()
         {
-            Chessboard.InsertPiece(new Rook(Chessboard, Color.Black), new ChessPosition('a', 8).ToPosition());
-            Chessboard.InsertPiece(new Rook(Chessboard, Color.White), new ChessPosition('a', 1).ToPosition());
-            Chessboard.InsertPiece(new Rook(Chessboard, Color.White), new ChessPosition('h', 1).ToPosition());
-            Chessboard.InsertPiece(new Rook(Chessboard, Color.Black), new ChessPosition('h', 8).ToPosition());
-            Chessboard.InsertPiece(new King(Chessboard, Color.White), new ChessPosition('e', 1).ToPosition());
-            Chessboard.InsertPiece(new King(Chessboard, Color.Black), new ChessPosition('e', 8).ToPosition());
-            
-
-
+            InsertNewPiece('a', 8, new Rook(Chessboard, Color.Black));
+            InsertNewPiece('a', 1, new Rook(Chessboard, Color.White));
+            InsertNewPiece('h', 1, new Rook(Chessboard, Color.White));
+            InsertNewPiece('h', 8, new Rook(Chessboard, Color.Black));
+            InsertNewPiece('e', 1, new King(Chessboard, Color.White));
+            InsertNewPiece('e', 8, new King(Chessboard, Color.Black));
         }
     }
 }

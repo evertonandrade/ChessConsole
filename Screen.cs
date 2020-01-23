@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using ChessConsole.Board;
 using ChessConsole.Game;
 
@@ -6,6 +7,41 @@ namespace ChessConsole
 {
     public class Screen
     {
+
+        public static void ShowMatch(ChessMatch match)
+        {
+            ShowBoard(match.Chessboard);
+            Console.WriteLine();
+            ShowCapturedPieces(match);
+            Console.WriteLine();
+            Console.WriteLine("Turno: " + match.Turn);
+            Console.WriteLine("Aguardando jogada da " + match.CurrentPlayer);
+        }
+
+        public static void ShowCapturedPieces(ChessMatch match)
+        {
+            Console.WriteLine("Peças capturadas: ");
+            Console.Write("Brancas: ");
+            ShowSetOfThePieces(match.PiecesCaptured(Color.White));
+            Console.WriteLine();
+            Console.Write("Pretas: ");
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            ShowSetOfThePieces(match.PiecesCaptured(Color.Black));
+            Console.ForegroundColor = aux;
+            Console.WriteLine();
+        }
+
+        public static void ShowSetOfThePieces(HashSet<Piece> set)
+        {
+            Console.Write("[");
+            foreach (Piece xPiece in set)
+            {
+                Console.Write(xPiece + " ");
+            }
+            Console.Write("]");
+        }
+        
         public static void ShowBoard(Chessboard chessboard)
         {
             for (int i = 0; i < chessboard.Lines; i++)
