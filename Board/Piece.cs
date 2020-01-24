@@ -23,6 +23,11 @@ namespace ChessConsole.Board
         {
             AmountMoves++;
         }
+        
+        public void DecrementAmountMoves()
+        {
+            AmountMoves--;
+        }
 
         public bool ThereArePossibleMovements()
         {

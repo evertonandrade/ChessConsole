@@ -13,33 +13,65 @@ namespace ChessConsole.Game
         public bool Finished { get; private set; }
         private HashSet<Piece> _pieces;
         private HashSet<Piece> _capturedPieces;
-        
+        public bool Check { get; private set; }
+
         public ChessMatch()
         {
-            Chessboard = new Chessboard(8,8);
+            Chessboard = new Chessboard(8, 8);
             Turn = 1;
             CurrentPlayer = Color.White;
             Finished = false;
+            Check = false;
             _pieces = new HashSet<Piece>();
             _capturedPieces = new HashSet<Piece>();
             InsertPiecesInMatch();
         }
 
-        public void MakeMovement(Position source, Position target)
+        public Piece MakeMovement(Position source, Position target)
         {
             Piece piece = Chessboard.RemovePiece(source);
             piece.IncrementAmountMoves();
-            Piece CapturedPiece = Chessboard.RemovePiece(target);
+            Piece capturedPiece = Chessboard.RemovePiece(target);
             Chessboard.InsertPiece(piece, target);
-            if (CapturedPiece != null)
+            if (capturedPiece != null)
             {
-                _capturedPieces.Add(CapturedPiece);
+                _capturedPieces.Add(capturedPiece);
             }
+
+            return capturedPiece;
+        }
+
+        public void UndoMovement(Position source, Position target, Piece capturedPiece)
+        {
+            Piece piece = Chessboard.RemovePiece(target);
+            piece.DecrementAmountMoves();
+            if (capturedPiece != null)
+            {
+                Chessboard.InsertPiece(capturedPiece, target);
+                _capturedPieces.Remove(capturedPiece);
+            }
+            Chessboard.InsertPiece(piece, source);
         }
 
         public void PerformPlay(Position source, Position target)
         {
-            MakeMovement(source, target);
+            Piece capturedPiece = MakeMovement(source, target);
+
+            if (ItsInCheck(CurrentPlayer))
+            {
+                UndoMovement(source, target, capturedPiece);
+                throw new BoardException("Você não pode se colocar em xeque!");
+            }
+
+            if (ItsInCheck(Adversary(CurrentPlayer)))
+            {
+                Check = true;
+            }
+            else
+            {
+                Check = false;
+            }
+            
             Turn++;
             SwitchPlayer();
         }
@@ -106,8 +138,54 @@ namespace ChessConsole.Game
                     aux.Add(xPiece);
                 }
             }
+
             aux.ExceptWith(PiecesCaptured(color));
             return aux;
+        }
+
+        private Color Adversary(Color color)
+        {
+            if (color == Color.White)
+            {
+                return Color.Black;
+            }
+            else
+            {
+                return Color.White;
+            }
+        }
+
+        private Piece King(Color color)
+        {
+            foreach (Piece xPiece in PiecesInTheGame(color))
+            {
+                if (xPiece is King)
+                {
+                    return xPiece;
+                }
+            }
+
+            return null;
+        }
+
+        public bool ItsInCheck(Color color)
+        {
+            Piece king = King(color);
+            if (king == null)
+            {
+                throw new BoardException("Não tem rei da cor " + color + " no tabuleiro");
+            }
+
+            foreach (Piece xPiece in PiecesInTheGame(Adversary(color)))
+            {
+                bool[,] matrix = xPiece.PossibleMoves();
+                if (matrix[king.Position.Line, king.Position.Column])
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public void InsertNewPiece(char column, int line, Piece piece)
@@ -118,12 +196,19 @@ namespace ChessConsole.Game
 
         public void InsertPiecesInMatch()
         {
-            InsertNewPiece('a', 8, new Rook(Chessboard, Color.Black));
-            InsertNewPiece('a', 1, new Rook(Chessboard, Color.White));
-            InsertNewPiece('h', 1, new Rook(Chessboard, Color.White));
-            InsertNewPiece('h', 8, new Rook(Chessboard, Color.Black));
-            InsertNewPiece('e', 1, new King(Chessboard, Color.White));
-            InsertNewPiece('e', 8, new King(Chessboard, Color.Black));
+            InsertNewPiece('c', 1, new Rook(Chessboard, Color.White));
+            InsertNewPiece('c', 2, new Rook(Chessboard, Color.White));
+            InsertNewPiece('d', 2, new Rook(Chessboard, Color.White));
+            InsertNewPiece('e', 2, new Rook(Chessboard, Color.White));
+            InsertNewPiece('d', 1, new King(Chessboard, Color.White));
+            InsertNewPiece('e', 1, new Rook(Chessboard, Color.White));
+
+            InsertNewPiece('c', 8, new Rook(Chessboard, Color.Black));
+            InsertNewPiece('c', 7, new Rook(Chessboard, Color.Black));
+            InsertNewPiece('d', 7, new Rook(Chessboard, Color.Black));
+            InsertNewPiece('e', 7, new Rook(Chessboard, Color.Black));
+            InsertNewPiece('d', 8, new King(Chessboard, Color.Black));
+            InsertNewPiece('e', 8, new Rook(Chessboard, Color.Black));
         }
     }
 }
