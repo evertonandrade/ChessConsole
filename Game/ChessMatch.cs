@@ -71,9 +71,17 @@ namespace ChessConsole.Game
             {
                 Check = false;
             }
-            
-            Turn++;
-            SwitchPlayer();
+
+            if (TestCheckMate(Adversary(CurrentPlayer)))
+            {
+                Finished = true;
+            }
+            else
+            {
+                Turn++;
+                SwitchPlayer();
+            }
+           
         }
 
         private void SwitchPlayer()
@@ -188,6 +196,39 @@ namespace ChessConsole.Game
             return false;
         }
 
+        public bool TestCheckMate(Color color)
+        {
+            if (!ItsInCheck(color))
+            {
+                return false;
+            }
+
+            foreach (Piece xPiece in PiecesInTheGame(color))
+            {
+                bool[,] matrix = xPiece.PossibleMoves();
+                for (int i = 0; i < Chessboard.Lines; i++)
+                {
+                    for (int j = 0; j < Chessboard.Columns; j++)
+                    {
+                        if (matrix[i, j])
+                        {
+                            Position source = xPiece.Position;
+                            Position target = new Position(i, j);
+                            Piece capturedPiece = MakeMovement(source, target);
+                            bool testCheck = ItsInCheck(color);
+                            UndoMovement(source, target, capturedPiece);
+                            if (!testCheck)
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+
         public void InsertNewPiece(char column, int line, Piece piece)
         {
             Chessboard.InsertPiece(piece, new ChessPosition(column, line).ToPosition());
@@ -197,18 +238,12 @@ namespace ChessConsole.Game
         public void InsertPiecesInMatch()
         {
             InsertNewPiece('c', 1, new Rook(Chessboard, Color.White));
-            InsertNewPiece('c', 2, new Rook(Chessboard, Color.White));
-            InsertNewPiece('d', 2, new Rook(Chessboard, Color.White));
-            InsertNewPiece('e', 2, new Rook(Chessboard, Color.White));
             InsertNewPiece('d', 1, new King(Chessboard, Color.White));
-            InsertNewPiece('e', 1, new Rook(Chessboard, Color.White));
+            InsertNewPiece('h', 7, new Rook(Chessboard, Color.White));
 
-            InsertNewPiece('c', 8, new Rook(Chessboard, Color.Black));
-            InsertNewPiece('c', 7, new Rook(Chessboard, Color.Black));
-            InsertNewPiece('d', 7, new Rook(Chessboard, Color.Black));
-            InsertNewPiece('e', 7, new Rook(Chessboard, Color.Black));
-            InsertNewPiece('d', 8, new King(Chessboard, Color.Black));
-            InsertNewPiece('e', 8, new Rook(Chessboard, Color.Black));
+            InsertNewPiece('a', 8, new King(Chessboard, Color.Black));
+            InsertNewPiece('b', 8, new Rook(Chessboard, Color.Black));
+            
         }
     }
 }

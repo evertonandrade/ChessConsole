@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1e4578b8-bcb0-47e3-af50-895fed73869b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board/Piece.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Board/Piece.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/ChessMatch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game/ChessMatch.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Screen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Screen.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.pdb" afterDir="false" />
@@ -45,10 +45,10 @@
         <option value="$PROJECT_DIR$/Board/Position.cs" />
         <option value="$PROJECT_DIR$/Game/Rook.cs" />
         <option value="$PROJECT_DIR$/Game/King.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/Board/Piece.cs" />
-        <option value="$PROJECT_DIR$/Game/ChessMatch.cs" />
         <option value="$PROJECT_DIR$/Screen.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Game/ChessMatch.cs" />
       </list>
     </option>
   </component>
@@ -109,7 +109,7 @@
       <workItem from="1578767079504" duration="598000" />
       <workItem from="1579350696334" duration="1288000" />
       <workItem from="1579778706172" duration="10342000" />
-      <workItem from="1579871712058" duration="1471000" />
+      <workItem from="1579871712058" duration="3979000" />
     </task>
     <servers />
   </component>

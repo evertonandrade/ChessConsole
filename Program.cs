@@ -42,6 +42,8 @@ namespace ChessConsole
                     }
 
                 }
+                Console.Clear();
+                Screen.ShowMatch(match);
             }
             catch (Exception e)
             {
