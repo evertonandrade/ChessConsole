@@ -20,7 +20,7 @@ namespace ChessConsole
                         Screen.ShowMatch(match);
 
                         Console.WriteLine();
-                        Console.Write("Origem: ");
+                        Console.Write("Origem (ex. a1): ");
                         Position source = Screen.ReadChessPosition().ToPosition();
                         match.ValidateOriginPosition(source);
 
@@ -29,13 +29,18 @@ namespace ChessConsole
                         Console.Clear();
                         Screen.ShowBoard(match.Chessboard, possiblePositions);
                         Console.WriteLine();
-                        Console.Write("Destino: ");
+                        Console.Write("Destino (ex. b2): ");
                         Position target  = Screen.ReadChessPosition().ToPosition();
                         match.ValidateDestinationPosition(source, target);
                     
                         match.PerformPlay(source, target);
                     }
                     catch (BoardException e)
+                    {
+                        Console.WriteLine(e.Message);
+                        Console.ReadLine();
+                    }
+                    catch (IndexOutOfRangeException e)
                     {
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
@@ -48,7 +53,6 @@ namespace ChessConsole
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                throw;
             }
         }
     }

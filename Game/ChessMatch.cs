@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using ChessConsole.Board;
 using ChessConsole.Board.Exceptions;
+using ChessConsole.Game.ChessPieces;
 
 namespace ChessConsole.Game
 {
@@ -116,7 +117,7 @@ namespace ChessConsole.Game
 
         public void ValidateDestinationPosition(Position source, Position target)
         {
-            if (!Chessboard.Piece(source).CanMoveTo(target))
+            if (!Chessboard.Piece(source).ExecutableMovement(target))
             {
                 throw new BoardException("Posição de destino inválida");
             }
@@ -237,12 +238,42 @@ namespace ChessConsole.Game
 
         public void InsertPiecesInMatch()
         {
-            InsertNewPiece('c', 1, new Rook(Chessboard, Color.White));
-            InsertNewPiece('d', 1, new King(Chessboard, Color.White));
-            InsertNewPiece('h', 7, new Rook(Chessboard, Color.White));
+            InsertNewPiece('a', 1, new Rook(Chessboard, Color.White));
+            InsertNewPiece('b', 1, new Knight(Chessboard, Color.White));
+            InsertNewPiece('c', 1, new Bishop(Chessboard, Color.White));
+            InsertNewPiece('d', 1, new Queen(Chessboard, Color.White));
+            InsertNewPiece('e', 1, new King(Chessboard, Color.White));
+            InsertNewPiece('f', 1, new Bishop(Chessboard, Color.White));
+            InsertNewPiece('g', 1, new Knight(Chessboard, Color.White));
+            InsertNewPiece('h', 1, new Rook(Chessboard, Color.White));
 
-            InsertNewPiece('a', 8, new King(Chessboard, Color.Black));
-            InsertNewPiece('b', 8, new Rook(Chessboard, Color.Black));
+            InsertNewPiece('a', 2, new Pawn(Chessboard, Color.White));
+            InsertNewPiece('b', 2, new Pawn(Chessboard, Color.White));
+            InsertNewPiece('c', 2, new Pawn(Chessboard, Color.White));
+            InsertNewPiece('d', 2, new Pawn(Chessboard, Color.White));
+            InsertNewPiece('e', 2, new Pawn(Chessboard, Color.White));
+            InsertNewPiece('f', 2, new Pawn(Chessboard, Color.White));
+            InsertNewPiece('g', 2, new Pawn(Chessboard, Color.White));
+            InsertNewPiece('h', 2, new Pawn(Chessboard, Color.White));
+
+
+            InsertNewPiece('a', 8, new Rook(Chessboard, Color.Black));
+            InsertNewPiece('b', 8, new Knight(Chessboard, Color.Black));
+            InsertNewPiece('c', 8, new Bishop(Chessboard, Color.Black));
+            InsertNewPiece('d', 8, new Queen(Chessboard, Color.Black));
+            InsertNewPiece('e', 8, new King(Chessboard, Color.Black));
+            InsertNewPiece('f', 8, new Bishop(Chessboard, Color.Black));
+            InsertNewPiece('g', 8, new Knight(Chessboard, Color.Black));
+            InsertNewPiece('h', 8, new Rook(Chessboard, Color.Black));
+
+            InsertNewPiece('a', 7, new Pawn(Chessboard, Color.Black));
+            InsertNewPiece('b', 7, new Pawn(Chessboard, Color.Black));
+            InsertNewPiece('c', 7, new Pawn(Chessboard, Color.Black));
+            InsertNewPiece('d', 7, new Pawn(Chessboard, Color.Black));
+            InsertNewPiece('e', 7, new Pawn(Chessboard, Color.Black));
+            InsertNewPiece('f', 7, new Pawn(Chessboard, Color.Black));
+            InsertNewPiece('g', 7, new Pawn(Chessboard, Color.Black));
+            InsertNewPiece('h', 7, new Pawn(Chessboard, Color.Black));
             
         }
     }

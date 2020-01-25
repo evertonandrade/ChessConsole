@@ -46,7 +46,7 @@ namespace ChessConsole.Board
             return false;
         }
 
-        public bool CanMoveTo(Position position)
+        public bool ExecutableMovement(Position position)
         {
             return PossibleMoves()[position.Line, position.Column];
         }

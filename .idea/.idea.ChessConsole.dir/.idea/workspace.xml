@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e4578b8-bcb0-47e3-af50-895fed73869b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Game/ChessPieces/Bishop.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game/ChessPieces/Knight.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game/ChessPieces/Pawn.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game/ChessPieces/Queen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChessConsole.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board/Piece.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Board/Piece.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/ChessMatch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game/ChessMatch.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/King.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game/ChessPieces/King.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Rook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game/ChessPieces/Rook.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Screen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Screen.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp2.2/ChessConsole.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.2/ChessConsole.pdb" afterDir="false" />
     </list>
@@ -22,15 +33,20 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Game/ChessPosition.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Game/King.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Game/Rook.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Game/ChessPieces/King.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Board/Exceptions/PositionException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Game/ChessPieces/Rook.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Game/ChessMatch.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Game/ChessPieces/Queen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Board/Position.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Board/Color.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Game/ChessPieces/Bishop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Board/Piece.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Board/Chessboard.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Game/ChessPieces/Knight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Board/Exceptions/BoardException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Game/ChessPieces/Pawn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Screen.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -46,9 +62,16 @@
         <option value="$PROJECT_DIR$/Game/Rook.cs" />
         <option value="$PROJECT_DIR$/Game/King.cs" />
         <option value="$PROJECT_DIR$/Board/Piece.cs" />
+        <option value="$PROJECT_DIR$/Game/ChessPieces/King.cs" />
+        <option value="$PROJECT_DIR$/Board/Exceptions/PositionException.cs" />
         <option value="$PROJECT_DIR$/Screen.cs" />
         <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/Game/ChessMatch.cs" />
+        <option value="$PROJECT_DIR$/Game/ChessPieces/Bishop.cs" />
+        <option value="$PROJECT_DIR$/Game/ChessPieces/Rook.cs" />
+        <option value="$PROJECT_DIR$/Game/ChessPieces/Queen.cs" />
+        <option value="$PROJECT_DIR$/Game/ChessPieces/Knight.cs" />
+        <option value="$PROJECT_DIR$/Game/ChessPieces/Pawn.cs" />
       </list>
     </option>
   </component>
@@ -109,7 +132,8 @@
       <workItem from="1578767079504" duration="598000" />
       <workItem from="1579350696334" duration="1288000" />
       <workItem from="1579778706172" duration="10342000" />
-      <workItem from="1579871712058" duration="3979000" />
+      <workItem from="1579871712058" duration="13180000" />
+      <workItem from="1579959370741" duration="2097000" />
     </task>
     <servers />
   </component>

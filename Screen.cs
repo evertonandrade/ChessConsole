@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using ChessConsole.Board;
+using ChessConsole.Board.Exceptions;
 using ChessConsole.Game;
 
 namespace ChessConsole
 {
     public class Screen
     {
-
         public static void ShowMatch(ChessMatch match)
         {
             ShowBoard(match.Chessboard);
@@ -28,7 +28,6 @@ namespace ChessConsole
                 Console.WriteLine("XEQUEMATE!");
                 Console.WriteLine("Vencedor: " + match.CurrentPlayer);
             }
-            
         }
 
         public static void ShowCapturedPieces(ChessMatch match)
@@ -52,9 +51,10 @@ namespace ChessConsole
             {
                 Console.Write(xPiece + " ");
             }
+
             Console.Write("]");
         }
-        
+
         public static void ShowBoard(Chessboard chessboard)
         {
             for (int i = 0; i < chessboard.Lines; i++)
@@ -67,14 +67,15 @@ namespace ChessConsole
 
                 Console.WriteLine();
             }
+
             Console.WriteLine("  a b c d e f g h");
         }
-        
+
         public static void ShowBoard(Chessboard chessboard, bool[,] possiblePositions)
         {
             ConsoleColor originalBackground = Console.BackgroundColor;
             ConsoleColor ChangedBackground = ConsoleColor.DarkGray;
-            
+
             for (int i = 0; i < chessboard.Lines; i++)
             {
                 Console.Write(8 - i + " ");
@@ -88,11 +89,14 @@ namespace ChessConsole
                     {
                         Console.BackgroundColor = originalBackground;
                     }
+
                     ShowPiece(chessboard.Piece(i, j));
                     Console.BackgroundColor = originalBackground;
                 }
+
                 Console.WriteLine();
             }
+
             Console.WriteLine("  a b c d e f g h");
             Console.BackgroundColor = originalBackground;
         }
@@ -102,8 +106,10 @@ namespace ChessConsole
             string s = Console.ReadLine();
             char column = s[0];
             int line = int.Parse(s[1] + "");
-            return new ChessPosition(column, line);
+            ChessPosition readPosition = new ChessPosition(column, line);
+            return readPosition;
         }
+
         public static void ShowPiece(Piece piece)
         {
             if (piece == null)
@@ -123,6 +129,7 @@ namespace ChessConsole
                     Console.Write(piece);
                     Console.ForegroundColor = aux;
                 }
+
                 Console.Write(" ");
             }
         }
