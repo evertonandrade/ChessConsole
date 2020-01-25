@@ -702,7 +702,7 @@
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/evertonfa7/.config/NuGet/NuGet.Config"
+        "/home/evertonfa7/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"

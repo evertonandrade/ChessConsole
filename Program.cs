@@ -2,6 +2,7 @@
 using ChessConsole.Board;
 using ChessConsole.Board.Exceptions;
 using ChessConsole.Game;
+using ChessConsole.View;
 
 namespace ChessConsole
 {
@@ -20,7 +21,7 @@ namespace ChessConsole
                         Screen.ShowMatch(match);
 
                         Console.WriteLine();
-                        Console.Write("Origem (ex. a1): ");
+                        Console.Write("Posição Origem: ");
                         Position source = Screen.ReadChessPosition().ToPosition();
                         match.ValidateOriginPosition(source);
 
@@ -29,7 +30,7 @@ namespace ChessConsole
                         Console.Clear();
                         Screen.ShowBoard(match.Chessboard, possiblePositions);
                         Console.WriteLine();
-                        Console.Write("Destino (ex. b2): ");
+                        Console.Write("Posição Destino: ");
                         Position target  = Screen.ReadChessPosition().ToPosition();
                         match.ValidateDestinationPosition(source, target);
                     
@@ -38,11 +39,19 @@ namespace ChessConsole
                     catch (BoardException e)
                     {
                         Console.WriteLine(e.Message);
+                        Console.WriteLine("Pressione ENTER ");
                         Console.ReadLine();
                     }
-                    catch (IndexOutOfRangeException e)
+                    catch (IndexOutOfRangeException)
                     {
-                        Console.WriteLine(e.Message);
+                        Console.WriteLine("Posição inexistente! Insira uma posição correta (ex. a1)");
+                        Console.WriteLine("Pressione ENTER ");
+                        Console.ReadLine();
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Formato invalido! Insira uma posição correta (ex. a1)");
+                        Console.WriteLine("Pressione ENTER ");
                         Console.ReadLine();
                     }
 

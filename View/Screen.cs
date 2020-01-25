@@ -4,7 +4,7 @@ using ChessConsole.Board;
 using ChessConsole.Board.Exceptions;
 using ChessConsole.Game;
 
-namespace ChessConsole
+namespace ChessConsole.View
 {
     public class Screen
     {

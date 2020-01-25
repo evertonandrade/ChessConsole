@@ -1,14 +1,3 @@
-/home/evertonfa7/RiderProjects/ChessConsole/bin/Debug/netcoreapp2.2/ChessConsole.deps.json
-/home/evertonfa7/RiderProjects/ChessConsole/bin/Debug/netcoreapp2.2/ChessConsole.runtimeconfig.json
-/home/evertonfa7/RiderProjects/ChessConsole/bin/Debug/netcoreapp2.2/ChessConsole.runtimeconfig.dev.json
-/home/evertonfa7/RiderProjects/ChessConsole/bin/Debug/netcoreapp2.2/ChessConsole.dll
-/home/evertonfa7/RiderProjects/ChessConsole/bin/Debug/netcoreapp2.2/ChessConsole.pdb
-/home/evertonfa7/RiderProjects/ChessConsole/obj/Debug/netcoreapp2.2/ChessConsole.csprojAssemblyReference.cache
-/home/evertonfa7/RiderProjects/ChessConsole/obj/Debug/netcoreapp2.2/ChessConsole.csproj.CoreCompileInputs.cache
-/home/evertonfa7/RiderProjects/ChessConsole/obj/Debug/netcoreapp2.2/ChessConsole.AssemblyInfoInputs.cache
-/home/evertonfa7/RiderProjects/ChessConsole/obj/Debug/netcoreapp2.2/ChessConsole.AssemblyInfo.cs
-/home/evertonfa7/RiderProjects/ChessConsole/obj/Debug/netcoreapp2.2/ChessConsole.dll
-/home/evertonfa7/RiderProjects/ChessConsole/obj/Debug/netcoreapp2.2/ChessConsole.pdb
 /home/evertonfa7/Área de Trabalho/ChessConsole/bin/Debug/netcoreapp2.2/ChessConsole.deps.json
 /home/evertonfa7/Área de Trabalho/ChessConsole/bin/Debug/netcoreapp2.2/ChessConsole.runtimeconfig.json
 /home/evertonfa7/Área de Trabalho/ChessConsole/bin/Debug/netcoreapp2.2/ChessConsole.runtimeconfig.dev.json
