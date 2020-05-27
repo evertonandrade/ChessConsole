@@ -1,6 +1,6 @@
 # ChessConsole
 
-Com o dotnet 3.1 sdk instalado faça:
+Com o **dotnet 3.1 [instalado](https://dotnet.microsoft.com/download)** faça:
 
 ```bash
 $ git clone https://github.com/evertonandrade/ChessConsole.git
